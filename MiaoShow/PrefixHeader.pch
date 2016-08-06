@@ -1,0 +1,37 @@
+//
+//  PrefixHeader.pch
+//  MiaoShow
+//
+//  Created by jinwei on 16/7/25.
+//  Copyright © 2016年 jinwei. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#pragma mark - 自定义NSLog
+
+#ifdef __OBJC__
+
+#ifdef DEBUG
+#define NSLog(FORMAT, ...) fprintf(stderr,"%s:%d\t  %s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#else
+#define NSLog(FORMAT, ...) nil
+#endif
+
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import <IJKMediaFramework/IJKMediaFramework.h>
+#import <Masonry.h>
+#import "UIView+JWExtension.h"
+#import "UIViewController+JWHUD.h"
+#import "JWConstant.h"
+#import "JWNetworkTool.h"
+#import <MJExtension.h>
+#import "UIViewController+JWExtension.h"
+#import "NSObject+JWHUD.h"
+
+
+#endif
